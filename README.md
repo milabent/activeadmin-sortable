@@ -9,11 +9,11 @@ This extension assumes that you're using one of the following on any model you w
 
 #### ActiveRecord
 
-[acts_as_list](https://github.com/rails/acts_as_list)
+[acts_as_sortable](https://github.com/aishek/activerecord-sortable)
 
 ```ruby
 class Page < ActiveRecord::Base
-  acts_as_list
+  acts_as_sortable
 end
 ```
 
@@ -51,7 +51,7 @@ gem 'activeadmin-sortable'
 
 ```ruby
 ActiveAdmin.register Page do
-  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_sortable column
   config.paginate   = false # optional; drag-and-drop across pages is not supported
 
   sortable # creates the controller action which handles the sorting

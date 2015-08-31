@@ -7,12 +7,7 @@ module ActiveAdmin
     module ControllerActions
       def sortable
         member_action :sort, :method => :post do
-          if defined?(::Mongoid::Orderable) && 
-            resource.class.included_modules.include?(::Mongoid::Orderable)
-              resource.move_to! params[:position].to_i
-          else
-            resource.insert_at params[:position].to_i
-          end
+          resource.move_to! params[:position].to_i
           head 200
         end
       end
